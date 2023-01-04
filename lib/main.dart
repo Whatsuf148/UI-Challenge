@@ -379,12 +379,17 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Container(
+                      clipBehavior: Clip.antiAlias,
                       height: 150,
                       width: 200,
+                      
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(200),
                         color: Colors.white,
+                        
                       ),
+                      child: Image.asset("assets/sachin.jpg",
+                      fit: BoxFit.contain,),
                     ),
                     Text(
                       "223\nFollowing",
