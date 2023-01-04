@@ -419,59 +419,56 @@ class Profile extends StatelessWidget {
                 width: 1,
                 height: 765,
               ),
-              
-                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Container(
-                      height: 40,
-                      width: 125,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.black,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text(
-                          "Follow",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    width: 125,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.black,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Follow",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
                 ),
-              
-               Padding(
-                  padding: const EdgeInsets.only(left: 99),
-                  child: InkWell(
-                    onTap: (){},
-                    child: Container(
-                      height: 40,
-                      width: 125,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.grey,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text(
-                          "Message",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 99),
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    width: 125,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.grey,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Text(
+                        "Message",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
                 ),
-              
+              ),
             ],
           ),
 
@@ -527,7 +524,7 @@ class Profile extends StatelessWidget {
           Column(
             children: [
               SizedBox(
-                height: 460,
+                height: 500,
                 width: 1,
               ),
               Container(
@@ -538,7 +535,6 @@ class Profile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   color: Colors.white,
                 ),
-                
               ),
             ],
           )
