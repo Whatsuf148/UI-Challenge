@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      home: const Register(),
+      home: const Profile(),
     );
   }
 }
@@ -306,5 +306,48 @@ class LogIn extends StatelessWidget {
             ],
           ),
         ]));
+  }
+}
+
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+          body: Stack(
+            children: [
+              Image.asset("assets/rec.jpg",
+              height: 300,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              ),
+              // ignore: prefer_const_literals_to_create_immutables
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
+                children:  [
+                Padding(
+                  padding: EdgeInsets.only(top:30,left:17),
+                  child: Icon(Icons.arrow_back_ios)),
+                Padding(
+                  padding: const EdgeInsets.only(top:30),
+                  child: Icon(Icons.arrow_back_ios),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top:30 , left: 256),
+                  child: Icon(Icons.messenger_rounded),
+                ),
+                
+                
+                
+              ],)
+            ],
+          )
+          
+
+    );
   }
 }

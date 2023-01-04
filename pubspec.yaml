@@ -64,6 +64,7 @@ flutter:
      - assets/circle.jpg
      - assets/net.jpg
      - assets/login.jpg
+     - assets/rec.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
