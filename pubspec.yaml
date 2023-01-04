@@ -66,6 +66,8 @@ flutter:
      - assets/login.jpg
      - assets/rec.jpg
      - assets/sachin.jpg
+     - assets/ep.png
+     - assets/rec.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

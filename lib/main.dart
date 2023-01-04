@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      home: const Profile(),
+      home: const Post(),
     );
   }
 }
@@ -320,7 +320,7 @@ class Profile extends StatelessWidget {
       "assets/rec.jpg",
       "assets/rec.jpg",
     ];
-    
+
     return Scaffold(
       body: Stack(
         children: [
@@ -355,9 +355,8 @@ class Profile extends StatelessWidget {
                 width: 400,
                 //color: Colors.blue,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color(0xff329CBD)
-                ),
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xff329CBD)),
               ),
             ],
           ),
@@ -382,14 +381,14 @@ class Profile extends StatelessWidget {
                       clipBehavior: Clip.antiAlias,
                       height: 150,
                       width: 200,
-                      
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(200),
                         color: Colors.white,
-                        
                       ),
-                      child: Image.asset("assets/sachin.jpg",
-                      fit: BoxFit.contain,),
+                      child: Image.asset(
+                        "assets/sachin.jpg",
+                        fit: BoxFit.contain,
+                      ),
                     ),
                     Text(
                       "223\nFollowing",
@@ -542,9 +541,11 @@ class Profile extends StatelessWidget {
                       return Container(
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Image.asset(
+                          gridImages[index],
+                          fit: BoxFit.cover,
                         ),
-                        child: Image.asset(gridImages[index], fit: BoxFit.cover,),
                       );
                     },
                   ),
@@ -552,6 +553,314 @@ class Profile extends StatelessWidget {
               ),
             ],
           )
+        ],
+      ),
+    );
+  }
+}
+
+class Post extends StatelessWidget {
+  const Post({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xffE5E5E5),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children:
+                // ignore: prefer_const_literals_to_create_immutables
+                [
+              Icon(Icons.camera_enhance_rounded),
+              Text("Explore",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontFamily: 'Popins',
+                    fontStyle: FontStyle.italic,
+                  )),
+              Icon(Icons.alarm_off_sharp),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/ep.png",
+                    ),
+                  ),
+                ),
+                child: Icon(Icons.add),
+              ),
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/ep.png",
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/ep.png",
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      "assets/ep.png",
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Expanded(
+              child: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: 400,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(60),
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 100,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Container(
+                          height: 70,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/ep.png",
+                                  ),
+                                  fit: BoxFit.cover)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Text(
+                          "David Manny\n@David001",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Center(
+                    child: Container(
+                      height: 410,
+                      width: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(70),
+                        image: DecorationImage(
+                          image: AssetImage("assets/rec.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      SizedBox(
+                        height: 550,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 60),
+                        child: Icon(
+                          Icons.message_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "100",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Icon(
+                          Icons.heart_broken_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "500K",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 60),
+                        child: Icon(
+                          Icons.share,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16),
+                        child: Icon(
+                          Icons.save_alt_sharp,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              Stack(
+                children: [
+                  Container(
+                    height: 310,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(60),
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 100,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Container(
+                          height: 70,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/ep.png",
+                                  ),
+                                  fit: BoxFit.cover)),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Text(
+                          "David Manny\n@David001",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Center(
+                    child: Container(
+                      height: 400,
+                      width: 300,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/rec.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      SizedBox(
+                        height: 500,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 60),
+                        child: Icon(
+                          Icons.message_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "100",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Icon(
+                          Icons.heart_broken_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "500K",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 60),
+                        child: Icon(
+                          Icons.share,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16),
+                        child: Icon(
+                          Icons.save_alt_sharp,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ))
         ],
       ),
     );
