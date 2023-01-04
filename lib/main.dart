@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 
@@ -202,7 +202,6 @@ class Register extends StatelessWidget {
             "Already have an account ? Sign In",
             style: TextStyle(
               fontFamily: 'Popinis',
-              
             ),
             textAlign: TextAlign.center,
           ),
@@ -297,10 +296,11 @@ class LogIn extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                 const Text("Haven't you Sign up?"),
-                 TextButton(onPressed: (){},
-                  child:Text("Sign up"),
-                 ),
+                  const Text("Haven't you Sign up?"),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Sign up"),
+                  ),
                 ],
               )
             ],
@@ -315,39 +315,51 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          body: Stack(
-            children: [
-              Image.asset("assets/rec.jpg",
+        body: Stack(
+      children: [
+        Image.asset(
+          "assets/rec.jpg",
+          height: 400,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        // ignore: prefer_const_literals_to_create_immutables
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: 30, left: 17),
+                child: Icon(Icons.arrow_back_ios)),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: Icon(Icons.arrow_back_ios),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30, left: 256),
+              child: Icon(Icons.message_rounded),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            SizedBox(
+              width: 600,
               height: 300,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            ),
+            Container(
+              height: 400,
+              width: 400,
+              //color: Colors.blue,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.blue,
               ),
-              // ignore: prefer_const_literals_to_create_immutables
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                // ignore: prefer_const_literals_to_create_immutables
-                children:  [
-                Padding(
-                  padding: EdgeInsets.only(top:30,left:17),
-                  child: Icon(Icons.arrow_back_ios)),
-                Padding(
-                  padding: const EdgeInsets.only(top:30),
-                  child: Icon(Icons.arrow_back_ios),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(top:30 , left: 256),
-                  child: Icon(Icons.messenger_rounded),
-                ),
-                
-                
-                
-              ],)
-            ],
-          )
-          
-
-    );
+            ),
+          ],
+        )
+      ],
+    ));
   }
 }
