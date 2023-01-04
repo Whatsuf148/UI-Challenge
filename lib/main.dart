@@ -314,6 +314,13 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> gridImages = [
+      "assets/rec.jpg",
+      "assets/rec.jpg",
+      "assets/rec.jpg",
+      "assets/rec.jpg",
+    ];
+    
     return Scaffold(
       body: Stack(
         children: [
@@ -325,7 +332,7 @@ class Profile extends StatelessWidget {
           ),
           // ignore: prefer_const_literals_to_create_immutables
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
@@ -333,11 +340,7 @@ class Profile extends StatelessWidget {
                   padding: EdgeInsets.only(top: 30, left: 17),
                   child: Icon(Icons.arrow_back_ios)),
               Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Icon(Icons.arrow_back_ios),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30, left: 256),
+                padding: const EdgeInsets.only(top: 30, right: 20),
                 child: Icon(Icons.message_rounded),
               ),
             ],
@@ -345,7 +348,6 @@ class Profile extends StatelessWidget {
           Column(
             children: [
               SizedBox(
-                width: 600,
                 height: 175,
               ),
               Container(
@@ -354,84 +356,82 @@ class Profile extends StatelessWidget {
                 //color: Colors.blue,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Colors.blue,
+                  color: Color(0xff329CBD)
                 ),
               ),
             ],
           ),
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
+          Column(
             children: [
               SizedBox(
-                width: 1,
-                height: 405,
-              ),
-              Text(
-                """1K 
-            Followers""",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                ),
+                height: 130,
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 10,
-                  right: 1,
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "1K\nFollowers",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                    Container(
+                      height: 150,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(200),
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      "223\nFollowing",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
                 ),
-                child: Container(
-                  height: 200,
+              ),
+            ],
+          ),
+          Align(
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: 320,
+                ),
+                SizedBox(
                   width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.white,
+                  child: Text(
+                    "My name is seven. I like UI and UX design and web development",
+                    textAlign: TextAlign.center,
                   ),
                 ),
-              ),
-              Text(
-                """ 223 
-            Following""",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
+          Column(
             children: [
               SizedBox(
-                width: 1,
-                height: 650,
+                height: 380,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 5, left: 80),
-                child: Text("""My name is seven. I like UI and UX design
-                 and web development"""),
-              ),
-            ],
-          ),
-          // ignore: prefer_const_literals_to_create_immutables
-          Row(
-            children: [
-              SizedBox(
-                width: 1,
-                height: 765,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 40,
-                    width: 125,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.black,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 125,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.black,
+                      ),
                       child: Text(
                         "Follow",
                         style: TextStyle(
@@ -441,79 +441,71 @@ class Profile extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 99),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 40,
-                    width: 125,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Message",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 40,
+                        width: 125,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.grey,
                         ),
-                        textAlign: TextAlign.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Text(
+                            "Message",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ],
           ),
-
           Column(
             children: [
               SizedBox(
                 height: 450,
-                width: 1,
               ),
-              // ignore: prefer_const_literals_to_create_immutables
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "All",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "All",
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 35),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Photos",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Photos",
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 45),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Videos",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Videos",
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -525,15 +517,32 @@ class Profile extends StatelessWidget {
             children: [
               SizedBox(
                 height: 500,
-                width: 1,
               ),
-              Container(
-                height: 300,
-                width: double.infinity,
-                //color: Colors.blue,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.white,
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.white,
+                  ),
+                  child: GridView.builder(
+                    padding: const EdgeInsets.all(20),
+                    itemCount: 4,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Image.asset(gridImages[index], fit: BoxFit.cover,),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
