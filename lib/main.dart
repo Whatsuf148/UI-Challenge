@@ -610,7 +610,7 @@ class Post extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 40,
                     fontFamily: 'Popins',
-                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Icon(Icons.alarm_off_sharp),
@@ -620,13 +620,13 @@ class Post extends StatelessWidget {
               height: 20,
             ),
             SizedBox(
-              height: 110,
+              height: 100,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 80,
-                    width: 80,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.blue,
@@ -651,8 +651,8 @@ class Post extends StatelessWidget {
                         return Column(
                           children: [
                             Container(
-                              height: 80,
-                              width: 80,
+                              height: 70,
+                              width: 70,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(100),
                                 color: Colors.blue,
