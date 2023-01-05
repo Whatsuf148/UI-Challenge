@@ -583,18 +583,8 @@ List<Map<String, String>> chatHeads = [
 ];
 
 List<Map<String, String>> posts = [
-  {
-    "name": "Abc",
-    "username": "@abc",
-    "comments": "100",
-    "likes": "400K"
-  },
-  {
-    "name": "Dipson",
-    "username": "@dipson",
-    "comments": "200",
-    "likes": "500K"
-  },
+  {"name": "Abc", "username": "@abc", "comments": "100", "likes": "400K"},
+  {"name": "Dipson", "username": "@dipson", "comments": "200", "likes": "500K"},
 ];
 
 class Post extends StatelessWidget {
@@ -733,7 +723,9 @@ class Post extends StatelessWidget {
                                 children: [
                                   Text(
                                     posts[index]["name"]!,
-                                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     posts[index]["username"]!,
@@ -759,33 +751,13 @@ class Post extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children:  [
-                                  Icon(
-                                    Icons.message_rounded,
-                                    color: Colors.white,
-                                  ),
-                                  Text(
-                                    posts[index]['comments']!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                              IconText(
+                                icon: Icons.message_rounded,
+                                title: posts[index]['comments']!,
                               ),
-                              Row(
-                                children:  [
-                                  Icon(
-                                    Icons.heart_broken_rounded,
-                                    color: Colors.white,
-                                  ),
-                                  Text(
-                                    posts[index]['likes']!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                              IconText(
+                                icon: Icons.heart_broken_rounded,
+                                title: posts[index]['likes']!,
                               ),
                               Icon(
                                 Icons.share,
@@ -807,6 +779,34 @@ class Post extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class IconText extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  const IconText({
+    Key? key,
+    required this.title,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: Colors.white,
+        ),
+        Text(
+          title,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }
