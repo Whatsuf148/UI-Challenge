@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      home: const Post(),
+      home: const HomePage(),
     );
   }
 }
@@ -60,7 +60,10 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 40),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Register()));
+                  },
                   // ignore: sort_child_properties_last
                   child: const Text(
                     "Get Started",
@@ -188,7 +191,11 @@ class Register extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => LogIn())));
+                },
                 style: ButtonStyle(
                     padding: MaterialStatePropertyAll(EdgeInsets.only(
                   top: 20,
@@ -284,7 +291,11 @@ class LogIn extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => Post())));
+                },
                 style: ButtonStyle(
                   padding: MaterialStatePropertyAll(
                     EdgeInsets.only(left: 100, right: 100, top: 20, bottom: 20),
